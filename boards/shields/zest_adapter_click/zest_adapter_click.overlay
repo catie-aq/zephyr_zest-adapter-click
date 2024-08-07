@@ -2,3 +2,36 @@
  * Copyright (c) 2024, CATIE
  * SPDX-License-Identifier: Apache-2.0
  */
+
+#include <zephyr/dt-bindings/gpio/sixtron-header.h>
+
+/ {
+    mikrobus_header: mikrobus-connector {
+        compatible = "mikro-bus";
+        #gpio-cells = <2>;
+        gpio-map-mask = <0xffffffff 0xffffffc0>;
+		gpio-map-pass-thru = <0 0x3f>;
+		gpio-map =	<0 0 &zest_adapter_click_connector ADC1 0>,	/* AN */
+					                        /* RST */
+				<2 0 &zest_adapter_click_connector SPI_SS 0>,	/* CS */
+				<3 0 &zest_adapter_click_connector SPI_SCK 0>,	/* SCK */
+				<4 0 &zest_adapter_click_connector SPI_MISO 0>,	/* MISO */
+				<5 0 &zest_adapter_click_connector SPI_MOSI 0>,	/* MOSI */
+								/* +3.3V */
+								/* GND */
+				<6 0 &zest_adapter_click_connector PWM1 0>,	/* PWM */
+				<7 0 &zest_adapter_click_connector DIO3 0>,	/* INT */
+				<8 0 &zest_adapter_click_connector UART_RX 0>,	/* RX  */
+				<9 0 &zest_adapter_click_connector UART_TX 0>,	/* TX  */
+				<10 0 &zest_adapter_click_connector I2C_SCL 0>,	/* SCL */
+				<11 0 &zest_adapter_click_connector I2C_SDA 0>;	/* SDA */
+								/* +5V */
+								/* GND */
+	};
+};
+
+zest_adapter_click_connector: &sixtron_connector {};
+
+mikrobus_spi: &sixtron_spi {};
+mikrobus_serial: &sixtron_uart {};
+mikrobus_i2c: &sixtron_i2c {};
