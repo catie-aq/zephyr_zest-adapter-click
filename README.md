@@ -3,8 +3,6 @@
 Zest_Adapter_Click board support for Zephyr OS.
 
 ## Usage
-This board enables the following sensors:
-- List Zest_Adapter_Click sensors here
+This board can be used to connect [Click Boards](https://www.mikroe.com/click) on 6TRON.
 
-:bulb: Sensors' drivers should also be added to your workspace:
-- List Zephyr OS drivers here
+Shield name: `Zest Adapter Click`
