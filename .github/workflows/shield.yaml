@@ -9,7 +9,7 @@ on:
 
 jobs:
   board:
-    uses: catie-aq/zephyr_workflows/.github/workflows/shield.yml@main
+    uses: catie-aq/zephyr_workflows/.github/workflows/shield.yml@22-add-workflow-for-shields
     with:
       shield: "zest_adapter_click"
 
