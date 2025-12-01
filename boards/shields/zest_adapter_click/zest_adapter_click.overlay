@@ -5,12 +5,12 @@
 
 #include <zephyr/dt-bindings/gpio/sixtron-header.h>
 
-#define PERIPHERAL_ZEST_ADAPTATER_CLICK(port) \
+#define PERIPHERAL_ZEST_ADAPTER_CLICK(port) \
 	mikrobus_serial: &sixtron_connector_##port##_uart {}; \
 	mikrobus_i2c: &sixtron_connector_##port##_i2c {}; \
 	mikrobus_spi: &sixtron_connector_##port##_spi {};
 
-#define GPIO_NEXUS_ZEST_ADAPTATER_CLICK(port) \
+#define GPIO_NEXUS_ZEST_ADAPTER_CLICK(port) \
 	/ { \
 		mikrobus_header: mikrobus-connector##port { \
 			compatible = "mikro-bus"; \
@@ -31,6 +31,6 @@
 		}; \
 	};
 
-#define ZEST_ADAPTATER_CLICK(port) \
-	PERIPHERAL_ZEST_ADAPTATER_CLICK(port) \
-	GPIO_NEXUS_ZEST_ADAPTATER_CLICK(port)
+#define ZEST_ADAPTER_CLICK(port) \
+	PERIPHERAL_ZEST_ADAPTER_CLICK(port) \
+	GPIO_NEXUS_ZEST_ADAPTER_CLICK(port)
